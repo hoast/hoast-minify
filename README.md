@@ -3,7 +3,7 @@
   [![npm package @latest](https://img.shields.io/npm/v/hoast-minify.svg?label=npm@latest&style=flat-square&maxAge=3600)](https://npmjs.com/package/hoast-minify)
   [![npm package @next](https://img.shields.io/npm/v/hoast-minify/next.svg?label=npm@next&style=flat-square&maxAge=3600)](https://npmjs.com/package/hoast-minify/v/next)
   
-  [![Travis-ci status](https://img.shields.io/travis-ci/hoast/hoast-minify.svg?branch=master&label=test%20status&style=flat-square&maxAge=3600)](https://travis-ci.org/hoast/hoast-minify)
+  [![Travis-ci status](https://img.shields.io/travis-ci/com/hoast/hoast-minify.svg?branch=master&label=test%20status&style=flat-square&maxAge=3600)](https://travis-ci.com/hoast/hoast-minify)
   [![CodeCov coverage](https://img.shields.io/codecov/c/github/hoast/hoast-minify/master.svg?label=test%20coverage&style=flat-square&maxAge=3600)](https://codecov.io/gh/hoast/hoast-minify)
   
   [![License agreement](https://img.shields.io/github/license/hoast/hoast-minify.svg?style=flat-square&maxAge=86400)](https://github.com/hoast/hoast-minify/blob/master/LICENSE)
@@ -52,7 +52,7 @@ $ npm install --save hoast-minify
   * Type: `Boolean`
   * Default: `false`
 
-> The `css` and `js` options will also be given to the `html-minifier` to use for CSS and JS content within files given to it.
+> The `css` and `js` options will also be given to the `html-minifier` to use for CSS and JS content within HTML files.
 
 ### Examples
 
