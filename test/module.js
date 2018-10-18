@@ -1,7 +1,33 @@
 // Dependency modules.
-const test = require(`ava`);
+const Hoast = require(`hoast`),
+	test = require(`ava`);
 // Custom module.
 const Minify = require(`../library`);
+
+/**
+ * Emulates a simplified Hoast process for testing purposes.
+ * @param {Object} options Hoast options.
+ * @param {Function} mod Module function.
+ * @param {Array of objects} files The files to process and return.
+ */
+const emulateHoast = async function(options, mod, files) {
+	const hoast = Hoast(__dirname, options);
+	
+	if (mod.before) {
+		await mod.before(hoast);
+	}
+	
+	const temp = await mod(hoast, files);
+	if (temp) {
+		files = temp;
+	}
+	
+	if (mod.after) {
+		await mod.after(hoast);
+	}
+	
+	return files;
+};
 
 test(`options default`, async function(t) {
 	// Create dummy files.
@@ -23,8 +49,7 @@ test(`options default`, async function(t) {
 	}];
 	
 	// Test module.
-	const minify = Minify();
-	await minify({}, files);
+	await emulateHoast({}, Minify(), files);
 	// Compare files.
 	t.deepEqual(files, filesOutcome);
 });
@@ -73,12 +98,11 @@ test(`options patterns`, async function(t) {
 	}];
 	
 	// Test module.
-	const minify = Minify({
+	await emulateHoast({}, Minify({
 		patternsCSS: [
 			`*.bcss`
 		]
-	});
-	await minify({}, files);
+	}), files);
 	// Compare files.
 	t.deepEqual(files, filesOutcome);
 });
@@ -103,8 +127,7 @@ test(`CSS`, async function(t) {
 	}];
 	
 	// Test module.
-	const minify = Minify();
-	await minify({}, files);
+	await emulateHoast({}, Minify(), files);
 	// Compare files.
 	t.deepEqual(files, filesOutcome);
 });
@@ -129,8 +152,7 @@ test(`HTML`, async function(t) {
 	}];
 	
 	// Test module.
-	const minify = Minify();
-	await minify({}, files);
+	await emulateHoast({}, Minify(), files);
 	// Compare files.
 	t.deepEqual(files, filesOutcome);
 });
@@ -155,8 +177,7 @@ test(`HTML CSS inline`, async function(t) {
 	}];
 	
 	// Test module.
-	const minify = Minify();
-	await minify({}, files);
+	await emulateHoast({}, Minify(), files);
 	// Compare files.
 	t.deepEqual(files, filesOutcome);
 });
@@ -181,8 +202,7 @@ test(`HTML CSS tag`, async function(t) {
 	}];
 	
 	// Test module.
-	const minify = Minify();
-	await minify({}, files);
+	await emulateHoast({}, Minify(), files);
 	// Compare files.
 	t.deepEqual(files, filesOutcome);
 });
@@ -207,8 +227,7 @@ test(`HTML JS tag`, async function(t) {
 	}];
 	
 	// Test module.
-	const minify = Minify();
-	await minify({}, files);
+	await emulateHoast({}, Minify(), files);
 	// Compare files.
 	t.deepEqual(files, filesOutcome);
 });
@@ -233,8 +252,7 @@ test(`JS`, async function(t) {
 	}];
 	
 	// Test module.
-	const minify = Minify();
-	await minify({}, files);
+	await emulateHoast({}, Minify(), files);
 	// Compare files.
 	t.deepEqual(files, filesOutcome);
 });
