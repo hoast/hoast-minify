@@ -79,7 +79,3 @@ Hoast(__dirname)
   .use(minify())
   .process();
 ```
-
-## License
-
-[ISC license](https://github.com/hoast/hoast-minify/blob/master/LICENSE)
