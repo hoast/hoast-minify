@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.2.0 (2018-12-16)
+For hoast `v1.1.5`
+### Added
+- Files with the `.mjs` extension get automatically minified as containing JavaScript code.
+
 ## 1.1.1 (2018-10-24)
 For hoast `v1.1.1`
 ### Changed

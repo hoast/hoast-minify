@@ -4561,6 +4561,6 @@ specifiers:
   debug: ^4.1.0
   eslint: ^5.10.0
   hoast: ^1.1.5
-  html-minifier: ^3.5.20
+  html-minifier: ^3.5.21
   nyc: ^13.1.0
-  terser: ^3.10.0
+  terser: ^3.11.0

@@ -25,7 +25,8 @@ module.exports = function(options) {
 			`*.html`
 		],
 		patternsJS: [
-			`*.js`
+			`*.js`,
+			`*.mjs`
 		],
 		
 		patternOptions: {}

@@ -44,7 +44,7 @@ $ npm install --save hoast-minify
 	* Default: `[ '*.html' ]`
 * `patternsJS`: Glob patterns to match file paths with that will be processed by `terser`.
   * Type: `String` or `Array of strings`
-	* Default: `[ '*.js' ]`
+	* Default: `[ '*.js', '*.mjs' ]`
 * `patternOptions`: Options for the glob pattern matching. See [planckmatch options](https://github.com/redkenrok/node-planckmatch#options) for more details on the pattern options.
   * Type: `Object`
   * Default: `{}`
