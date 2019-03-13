@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.2.1 (2019-03-13)
+### Changed
++ Updated dependencies and development dependencies.
+
 ## 1.2.0 (2018-12-16)
 For hoast `v1.1.5`
 ### Added
